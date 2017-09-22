@@ -58,7 +58,9 @@ class my_pca:
         '''
         Projects input data to Eigen Space (Principal Component Space)
         '''
-        self.projectedData = self.data.dot(self.eigenVectors)   
+        self.projectedData = self.data.dot(self.eigenVectors)     
+        print("\nProjected data are") 
+        print(self.projectedData)
     
     def printVarianceOfEachColumn(self):
         '''
@@ -70,7 +72,7 @@ class my_pca:
              print("Variance of %s is %f"%(self.header[id], var))
 
 if __name__ == "__main__": 
-    dataPath =   input("This is simple PCA Module\nEnter path to data file\n")#'D:\\UNCC\\ML\quiz _1\\quiz1-aka5hChandra\\dataset_1.csv'#
+    dataPath =  input("This is simple PCA Module\nEnter path to data file\n")#'D:\\UNCC\\ML\quiz _1\\quiz1-aka5hChandra\\dataset_1.csv'#'D:\\UNCC\\ML\quiz _1\\quiz1-aka5hChandra\\dataset_1.csv'#
     pca =  my_pca(dataPath)
     pca.findAllVariances()
     pca.findAllCOVariances()
